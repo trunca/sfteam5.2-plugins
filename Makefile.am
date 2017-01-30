@@ -1,28 +1,12 @@
 ACLOCAL_AMFLAGS = -I m4
 
- 
+SUBDIRS = \
+	         AudioEffect \
+          GigaBlueVFDControl
 
-if HAVE_WIRELESSACCESSPOINT
-SUBDIRS += WirelessAccessPoint
-endif
+metadir = $(datadir)/meta
+meta_DATA = index-enigma2-plugins.xml
+CLEANFILES = index-enigma2-plugins.xml
 
-
-if GIGABLUE
-SUBDIRS += GigaBlueVFDControl Blindscan AudioEffect
-endif
-
-if GBQUADPLUS
-SUBDIRS += AudioEffect TransCodingSetup
-endif
-
-if GBQUAD
-SUBDIRS += AudioEffect TransCodingSetup
-endif
-
-if GB800SEPLUS
-SUBDIRS += AudioEffect
-endif
-
-if GB800UEPLUS
-SUBDIRS += AudioEffect
-endif
+index-enigma2-plugins.xml: $(top_srcdir)/genmetaindex.py $(top_srcdir)/*/meta/plugin_*.xml
+	$(AM_V_GEN)$(PYTHON) $^ > $@
