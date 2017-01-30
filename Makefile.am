@@ -1,8 +1,6 @@
 ACLOCAL_AMFLAGS = -I m4
 
-SUBDIRS = \
-	         AudioEffect \
-          GigaBlueVFDControl
+SUBDIRS = GigaBlueVFDControl
 
 metadir = $(datadir)/meta
 meta_DATA = index-enigma2-plugins.xml
