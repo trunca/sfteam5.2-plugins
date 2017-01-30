@@ -1,6 +1,6 @@
 ACLOCAL_AMFLAGS = -I m4
 
-SUBDIRS = TunerServer 
+ 
 
 if HAVE_WIRELESSACCESSPOINT
 SUBDIRS += WirelessAccessPoint
