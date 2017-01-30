@@ -1,4 +1,4 @@
-AC_INIT([enigma2-oe-alliance-plugins],[1.0])
+AC_INIT([enigma2-plugins],[4],[forum@openpli.org])
 AM_INIT_AUTOMAKE([dist-bzip2 foreign no-define tar-pax])
 AC_CONFIG_HEADERS([enigma2-plugins-config.h])
 
@@ -14,13 +14,7 @@ AC_PROG_CXX
 m4_ifdef([LT_INIT], [LT_INIT], [AC_PROG_LIBTOOL])
 AC_CONFIG_MACRO_DIR([m4])
 
-AC_CHECK_HEADERS([dbox/fp.h dbox/lcd-ks0713.h])
-
 AC_PATH_PROG(MSGFMT, msgfmt, AC_MSG_ERROR(Could not find msgfmt))
-AC_PATH_PROG(MSGINIT, msginit, AC_MSG_ERROR(Could not find msginit))
-AC_PATH_PROG(MSGMERGE, msgmerge, AC_MSG_ERROR(Could not find msgmerge))
-AC_PATH_PROG(MSGUNIQ, msguniq, AC_MSG_ERROR(Could not find msguniq))
-AC_PATH_PROG(XGETTEXT, xgettext, AC_MSG_ERROR(Could not find xgettext))
 
 AM_PATH_PYTHON
 AX_PYTHON_DEVEL
